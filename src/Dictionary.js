@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Dictionary.css";
 import owlImg from "./images/owl.png";
+import axios from "axios";
 
 export default function Dictionary() {
     const [searchQuery, setSearchQuery] = useState("");
