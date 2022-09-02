@@ -1,0 +1,13 @@
+.Dictionary #headerImg {
+    max-height: 200px;
+    margin: 0 auto;
+    display: block;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.Dictionary #searchForm {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
