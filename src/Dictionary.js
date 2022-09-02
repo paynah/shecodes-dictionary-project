@@ -5,11 +5,27 @@ import axios from "axios";
 
 export default function Dictionary() {
     const [searchQuery, setSearchQuery] = useState("");
+    const baseApiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
+    function onDictionarySearchResponse(response) {
+        console.log(response.data);
+    }
+
+    function handleDictionaryError(response) {
+        if (typeof response === "object" && response.constructor.name === "AxiosError") {
+            let errorMsg = response.response.data.message + " " + response.response.data.resolution;
+            alert(errorMsg);
+        } else {
+            alert("An error has occurred. Please try again.");
+            console.log(response);
+        }
+    }
+    
     function onSearchSubmit(event) {
         event.preventDefault();
 
-        alert(`Searching for ${searchQuery}`);
+        const apiUrl = `${baseApiUrl}${searchQuery}`;
+        axios.get(apiUrl).then(onDictionarySearchResponse).catch(handleDictionaryError);
     }
 
     function onSearchQueryChange(event) {
