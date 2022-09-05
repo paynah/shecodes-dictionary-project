@@ -4,9 +4,9 @@ import PartOfSpeech from "./PartOfSpeech";
 
 export default function SearchResult(props) {
     if (props.searchResults) {
-        console.log(props.searchResults);
+        //console.log(props.searchResults);
         const cleanedResults = cleanUpSearchResults(props.searchResults);
-        //console.log(cleanedResults);
+        console.log(cleanedResults);
 
         return (
             <div className="SearchResult">
@@ -17,7 +17,10 @@ export default function SearchResult(props) {
                         // Loop through each part of speech
                         Object.entries(cleanedResults.partsOfSpeech).map(([partOfSpeech, meaning], index) => {
                             return (
-                                <PartOfSpeech partOfSpeech={partOfSpeech} key={index} definitions={meaning.definitions} />
+                                <PartOfSpeech partOfSpeech={partOfSpeech} 
+                                    key={index} 
+                                    definitions={meaning.definitions}
+                                    synonyms={meaning.synonyms} />
                             );
                         })
                     }
@@ -59,8 +62,12 @@ function cleanUpSearchResults(results) {
     for (let x = 0; x < phoneticsArray.length; x++) {
         if (phoneticsArray[x].audio !== "") {
             phoneticsUrl = phoneticsArray[x].audio;
-        } else if (phoneticsArray[x].text !== "") {
+        }
+        if (phoneticsArray[x].text !== "") {
             phonetics = phoneticsArray[x].text;
+        }
+        if (phonetics !== "" && phoneticsUrl !== "") {
+            break;
         }
     }
 
