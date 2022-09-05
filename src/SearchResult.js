@@ -1,17 +1,18 @@
 import React from "react";
 import "./SearchResult.css";
 import PartOfSpeech from "./PartOfSpeech";
+import Phonetics from "./Phonetics";
 
 export default function SearchResult(props) {
     if (props.searchResults) {
         //console.log(props.searchResults);
         const cleanedResults = cleanUpSearchResults(props.searchResults);
-        console.log(cleanedResults);
+        //console.log(cleanedResults);
 
         return (
             <div className="SearchResult">
                 <span className="definitionHeader">{cleanedResults.word}</span>
-                <span className="phonetics">({cleanedResults.phonetics})</span>
+                <Phonetics phonetics={cleanedResults.phonetics} url={cleanedResults.phoneticsUrl} />
                 <div className="partsOfSpeech">
                     {
                         // Loop through each part of speech
@@ -33,6 +34,7 @@ export default function SearchResult(props) {
 }
 
 function cleanUpSearchResults(results) {
+    //console.log(results);
     const cleanedResults = {};
     const partsOfSpeech = {};    // Key: Part of speech; Value: definitions
     let phoneticsUrl = "";
@@ -63,7 +65,7 @@ function cleanUpSearchResults(results) {
         if (phoneticsArray[x].audio !== "") {
             phoneticsUrl = phoneticsArray[x].audio;
         }
-        if (phoneticsArray[x].text !== "") {
+        if (phoneticsArray[x].text) {
             phonetics = phoneticsArray[x].text;
         }
         if (phonetics !== "" && phoneticsUrl !== "") {

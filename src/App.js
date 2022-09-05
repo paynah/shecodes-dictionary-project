@@ -6,7 +6,8 @@ export default function App() {
   return (
     <div className="App" style={{ 
       backgroundImage: `url(${bgImg})`,
-      height: `100vh`
+      height: `100vh`,
+      overflowY: `scroll`
     }}>
         <Dictionary />
         

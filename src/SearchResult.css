@@ -7,11 +7,6 @@
     font-weight: bold;
 }
 
-.SearchResult .phonetics {
-    margin-left: 10px;
-    font-style: italic;
-}
-
 .SearchResult .partsOfSpeech {
     margin-top: 15px;
     margin-left: 25px;

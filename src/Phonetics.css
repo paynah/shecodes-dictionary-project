@@ -1,0 +1,16 @@
+.Phonetics {
+    margin-left: 10px;
+    font-style: italic;
+}
+
+.Phonetics #audioBtn:focus {
+    border: none;
+}
+
+.Phonetics #audioBtn:hover {
+    border: none;
+}
+
+.Phonetics #audioBtn:active {
+    border: none;
+}
