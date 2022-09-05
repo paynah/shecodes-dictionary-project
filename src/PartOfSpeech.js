@@ -1,5 +1,6 @@
 import React from "react";
 import "./PartOfSpeech.css";
+import Synonyms from "./Synonyms";
 
 export default function PartOfSpeech (props) {
     return (
@@ -7,12 +8,12 @@ export default function PartOfSpeech (props) {
             {/* Loop through each definition for the current part of speech */}
             {props.definitions.map((definition, index) => {
                 return (
-                    // <Definition index={index} definition={definition} />
                     <div className="definition" key={index}> 
                         {index + 1}. {definition.definition} 
                     </div>
                 );
             })}
+            <Synonyms synonyms={props.synonyms} />
         </div>
     );
 }
