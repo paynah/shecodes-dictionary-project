@@ -69,7 +69,7 @@ export default function Dictionary() {
   function onSearchSubmit(event) {
     event.preventDefault();
 
-    const pexelsApiUrl = `${pexelsBaseApiUrl}search?query=${searchQuery}&per_page=9`;
+    const pexelsApiUrl = `${pexelsBaseApiUrl}search?query=${searchQuery}&per_page=8`;
     const headers = { Authorization: `Bearer ${pexelsKey}` };
     axios
       .get(pexelsApiUrl, { headers })
