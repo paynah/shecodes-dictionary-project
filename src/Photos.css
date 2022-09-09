@@ -1,0 +1,31 @@
+.Photos section {
+    background-color: #FCFCFC;
+    border-radius: 13px;
+    padding-left: 7px;
+    padding-top: 15px;
+    padding-right: 25px;
+    margin-left: 25px;
+    margin-right: 20px;
+    border: 1px solid #E8E8E8;
+}
+
+.Photos {
+    margin-left: 5px;
+}
+
+.Photos img {
+    border-radius: 5px;
+    filter: drop-shadow(4px 4px 6px #b6b6b6);
+    margin-bottom: 30px;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+}
+
+.Photos img:hover {
+    transform: scale(0.96);
+}
+
+.Photos .photo {
+    margin-bottom: 15px;
+}
